@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Anton', sans-serif;
+  --font-sans: 'Inter', sans-serif;
+  --font-space: 'Space Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+body {
+  background-color: #050505;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+/* Marquee Animation */
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+}
+.marquee-content {
+  display: flex;
+  animation: marquee 20s linear infinite;
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Custom Scrollbar for Brutalist Vibe */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #ff0099;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #cc007a;
+}
+
+/* Hide horizontal scrollbar */
+::-webkit-scrollbar:horizontal {
+  display: none;
+}
+
+/* CV Gradient Animation */
+
+.animate-cv-gradient {
+  color: #ffffff;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.group:hover .animate-cv-gradient {
+  color: #ff0099;
+}
+
+@keyframes color-loop-up {
+  0% { stroke: #ffffff; }
+  50% { stroke: #ff0099; }
+  100% { stroke: #ffffff; }
+}
+
+.animate-cv-icon {
+  stroke: #ffffff;
+}
+
+.group:hover .animate-cv-icon {
+  animation: color-loop-up 1.8s linear infinite;
+}
