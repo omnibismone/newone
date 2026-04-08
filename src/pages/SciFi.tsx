@@ -362,7 +362,7 @@ export default function SciFi() {
       </div>
 
       {/* Top Left: Station Info */}
-      <div className="fixed top-6 left-6 z-50">
+      <div className="absolute top-6 left-6 z-50">
         <div className="relative group">
           <div className="absolute -top-1 -left-1 w-3 h-3 border-t-2 border-l-2 border-[#00f2ff] shadow-[0_0_10px_#00f2ff]" />
           <div className="absolute -bottom-1 -right-1 w-3 h-3 border-b-2 border-r-2 border-[#00f2ff] shadow-[0_0_10px_#00f2ff]" />
@@ -379,7 +379,7 @@ export default function SciFi() {
       </div>
 
       {/* Top Right: Local Time */}
-      <div className="fixed top-6 right-6 z-50 flex flex-col items-end gap-4">
+      <div className="absolute top-6 right-6 z-50 flex flex-col items-end gap-4">
         <div className="relative">
           <div className="absolute -top-1 -left-1 w-3 h-3 border-t-2 border-l-2 border-[#00f2ff] shadow-[0_0_10px_#00f2ff]" />
           <div className="absolute -bottom-1 -right-1 w-3 h-3 border-b-2 border-r-2 border-[#00f2ff] shadow-[0_0_10px_#00f2ff]" />
@@ -603,7 +603,7 @@ export default function SciFi() {
       </div>
 
       {/* Bottom HUD Elements */}
-      <div className="fixed bottom-6 left-6 z-50">
+      <div className="absolute bottom-6 left-6 z-50">
         <div className="bg-black/80 border border-[#39ff14]/40 px-5 py-3 flex items-center gap-3 shadow-[0_0_15px_rgba(57,255,20,0.1)]">
           <div className="w-2 h-2 bg-[#39ff14] animate-pulse rounded-full shadow-[0_0_10px_#39ff14]" />
           <div className="text-[10px] font-mono font-bold text-[#39ff14] tracking-[0.2em] uppercase drop-shadow-[0_0_5px_rgba(57,255,20,0.5)]">System_Online</div>
@@ -611,7 +611,7 @@ export default function SciFi() {
         </div>
       </div>
 
-      <div className="fixed bottom-6 right-6 z-50 flex items-center gap-4">
+      <div className="absolute bottom-6 right-6 z-50 flex items-center gap-4">
         <Link to="/" className="p-3 border-2 border-[#ff00ff]/50 text-[#ff00ff] hover:bg-[#ff00ff] hover:text-black transition-all shadow-[0_0_15px_rgba(255,0,255,0.2)] hover:shadow-[0_0_20px_rgba(255,0,255,0.5)]">
           <ArrowLeft size={20} />
         </Link>
