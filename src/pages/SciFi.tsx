@@ -362,46 +362,46 @@ export default function SciFi() {
       </div>
 
       {/* Top Left: Station Info */}
-      <div className="absolute top-6 left-6 z-50">
+      <div className="absolute top-4 left-4 md:top-6 md:left-6 z-50">
         <div className="relative group">
-          <div className="absolute -top-1 -left-1 w-3 h-3 border-t-2 border-l-2 border-[#00f2ff] shadow-[0_0_10px_#00f2ff]" />
-          <div className="absolute -bottom-1 -right-1 w-3 h-3 border-b-2 border-r-2 border-[#00f2ff] shadow-[0_0_10px_#00f2ff]" />
-          <div className="bg-black/80 border border-[#00f2ff]/40 px-5 py-3 shadow-[0_0_15px_rgba(0,242,255,0.1)] glitch-container flex flex-col gap-1">
-            <div className="flex items-center gap-2">
-              <Zap size={10} className="text-[#00f2ff] animate-pulse shrink-0" />
-              <div className="text-[10px] font-mono text-[#00f2ff] tracking-widest font-bold w-fit">
-                STATUS: ACTIVE // AVAILABLE
+          <div className="absolute -top-1 -left-1 w-2 h-2 md:w-3 md:h-3 border-t-2 border-l-2 border-[#00f2ff] shadow-[0_0_10px_#00f2ff]" />
+          <div className="absolute -bottom-1 -right-1 w-2 h-2 md:w-3 md:h-3 border-b-2 border-r-2 border-[#00f2ff] shadow-[0_0_10px_#00f2ff]" />
+          <div className="bg-black/80 border border-[#00f2ff]/40 px-3 py-2 md:px-5 md:py-3 shadow-[0_0_15px_rgba(0,242,255,0.1)] glitch-container flex flex-col gap-0.5 md:gap-1">
+            <div className="flex items-center gap-1.5 md:gap-2">
+              <Zap size={8} className="text-[#00f2ff] animate-pulse shrink-0 md:w-[10px] md:h-[10px]" />
+              <div className="text-[8px] md:text-[10px] font-mono text-[#00f2ff] tracking-widest font-bold w-fit">
+                STATUS: ACTIVE
               </div>
             </div>
-            <div className="text-2xl font-black font-space tracking-tighter text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] glitch-text w-fit" data-text="NGUYEN NGAN STATION">NGUYEN NGAN STATION</div>
+            <div className="text-sm md:text-2xl font-black font-space tracking-tighter text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] glitch-text w-fit" data-text="NGUYEN NGAN STATION">NGUYEN NGAN STATION</div>
           </div>
         </div>
       </div>
 
       {/* Top Right: Local Time */}
-      <div className="absolute top-6 right-6 z-50 flex flex-col items-end gap-4">
+      <div className="absolute top-4 right-4 md:top-6 md:right-6 z-50 flex flex-col items-end gap-4">
         <div className="relative">
-          <div className="absolute -top-1 -left-1 w-3 h-3 border-t-2 border-l-2 border-[#00f2ff] shadow-[0_0_10px_#00f2ff]" />
-          <div className="absolute -bottom-1 -right-1 w-3 h-3 border-b-2 border-r-2 border-[#00f2ff] shadow-[0_0_10px_#00f2ff]" />
-          <div className="bg-black/80 border border-[#00f2ff]/40 px-5 py-3 text-right shadow-[0_0_15px_rgba(0,242,255,0.1)]">
-            <div className="text-[10px] font-mono text-[#00f2ff] tracking-widest mb-1 uppercase font-bold">Local_Time</div>
-            <div className="text-xl font-black font-mono tracking-tighter text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]">{time}</div>
+          <div className="absolute -top-1 -left-1 w-2 h-2 md:w-3 md:h-3 border-t-2 border-l-2 border-[#00f2ff] shadow-[0_0_10px_#00f2ff]" />
+          <div className="absolute -bottom-1 -right-1 w-2 h-2 md:w-3 md:h-3 border-b-2 border-r-2 border-[#00f2ff] shadow-[0_0_10px_#00f2ff]" />
+          <div className="bg-black/80 border border-[#00f2ff]/40 px-3 py-2 md:px-5 md:py-3 text-right shadow-[0_0_15px_rgba(0,242,255,0.1)]">
+            <div className="text-[8px] md:text-[10px] font-mono text-[#00f2ff] tracking-widest mb-0.5 md:mb-1 uppercase font-bold">Local_Time</div>
+            <div className="text-xs md:text-xl font-black font-mono tracking-tighter text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]">{time}</div>
           </div>
         </div>
       </div>
 
       {/* Main Layout Grid */}
-      <div className="relative z-10 grid grid-cols-12 gap-6 pt-24 h-[calc(100vh-120px)]">
+      <div className="relative z-10 grid grid-cols-12 gap-6 pt-32 md:pt-24 h-auto md:h-[calc(100vh-120px)]">
         
         {/* Left Column: Navigation & Logs */}
-        <div className="col-span-12 md:col-span-3 flex flex-col gap-6">
+        <div className="col-span-12 md:col-span-3 flex flex-col gap-4 md:gap-6 order-2 md:order-1">
           <HUDBox title="NAVIGATION" icon={Layers} className="border-[#00f2ff]/40 shadow-[0_0_15px_rgba(0,242,255,0.05)]">
-            <div className="space-y-1">
+            <div className="grid grid-cols-3 md:grid-cols-1 gap-1 md:gap-1">
               {["ABOUT", "PROJECTS", "EXPERIENCE"].map((tab) => (
                 <button
                   key={tab}
                   onClick={() => scrollToSection(tab)}
-                  className={`w-full text-left px-4 py-3 text-[12px] font-mono font-bold tracking-[0.3em] transition-all relative overflow-hidden ${
+                  className={`w-full text-center md:text-left px-2 md:px-4 py-2 md:py-3 text-[9px] md:text-[12px] font-mono font-bold tracking-[0.1em] md:tracking-[0.3em] transition-all relative overflow-hidden ${
                     activeTab === tab ? "bg-[#00f2ff] text-black shadow-[0_0_15px_#00f2ff]" : "text-white/50 hover:text-white hover:bg-white/5"
                   }`}
                 >
@@ -414,7 +414,7 @@ export default function SciFi() {
             </div>
           </HUDBox>
 
-          <HUDBox title="SYSTEM_LOGS" icon={Terminal} className="overflow-hidden border-[#39ff14]/30" accentColor="#39ff14">
+          <HUDBox title="SYSTEM_LOGS" icon={Terminal} className="overflow-hidden border-[#39ff14]/30 hidden md:block" accentColor="#39ff14">
             <div className="space-y-1.5 font-mono text-[10px] text-[#39ff14]">
               {logs.map((log, i) => {
                 if (i > activeLogIndex) return null;
@@ -464,37 +464,37 @@ export default function SciFi() {
         {/* Center Column: Content (Scrollable) */}
         <div 
           ref={scrollContainerRef}
-          className="col-span-12 md:col-span-6 h-full overflow-y-auto custom-scrollbar px-2 space-y-20 scroll-smooth"
+          className="col-span-12 md:col-span-6 h-auto md:h-full overflow-y-visible md:overflow-y-auto custom-scrollbar px-2 space-y-12 md:space-y-20 scroll-smooth order-1 md:order-2"
         >
           {/* ABOUT SECTION */}
-          <section ref={aboutRef} data-section="ABOUT" className="min-h-full flex flex-col items-center justify-center py-10 text-center font-space">
-            <div className="relative w-48 h-48 mb-8 flex items-center justify-center">
+          <section ref={aboutRef} data-section="ABOUT" className="min-h-[50vh] md:min-h-full flex flex-col items-center justify-center py-6 md:py-10 text-center font-space">
+            <div className="relative w-32 h-32 md:w-48 md:h-48 mb-6 md:mb-8 flex items-center justify-center">
               <motion.div animate={{ rotate: 360 }} transition={{ duration: 20, repeat: Infinity, ease: "linear" }} className="absolute inset-0 border border-dashed border-[#00f2ff]/30 rounded-full shadow-[0_0_15px_rgba(0,242,255,0.1)]" />
-              <motion.div animate={{ rotate: -360 }} transition={{ duration: 15, repeat: Infinity, ease: "linear" }} className="absolute inset-4 border border-[#ff00ff]/50 rounded-full border-t-transparent border-b-transparent shadow-[0_0_20px_rgba(255,0,255,0.2)]" />
+              <motion.div animate={{ rotate: -360 }} transition={{ duration: 15, repeat: Infinity, ease: "linear" }} className="absolute inset-3 md:inset-4 border border-[#ff00ff]/50 rounded-full border-t-transparent border-b-transparent shadow-[0_0_20px_rgba(255,0,255,0.2)]" />
               <div className="relative z-10 flex flex-col items-center">
-                <Users size={48} className="text-[#00f2ff] drop-shadow-[0_0_10px_rgba(0,242,255,0.8)] animate-pulse mb-2" />
-                <span className="text-[8px] font-mono font-bold tracking-[0.5em] text-[#00f2ff] uppercase drop-shadow-[0_0_5px_rgba(0,242,255,0.5)]">Profile_Scan</span>
+                <Users size={32} className="text-[#00f2ff] md:w-12 md:h-12 drop-shadow-[0_0_10px_rgba(0,242,255,0.8)] animate-pulse mb-1 md:mb-2" />
+                <span className="text-[6px] md:text-[8px] font-mono font-bold tracking-[0.3em] md:tracking-[0.5em] text-[#00f2ff] uppercase drop-shadow-[0_0_5px_rgba(0,242,255,0.5)]">Profile_Scan</span>
               </div>
             </div>
             <HUDBox title="SUBJECT_PROFILE" className="max-w-xl border-[#00f2ff]/40 bg-black/60 shadow-[0_0_20px_rgba(0,242,255,0.05)]">
-              <h2 className="text-3xl font-bold text-white mb-4 uppercase tracking-tighter drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">Nguyen Ngan</h2>
-              <p className="text-white/80 text-sm leading-relaxed uppercase tracking-wider">
-                I bring together creative vision and technical expertise. With experience across fast-paced industries, I help companies craft compelling visual stories, build engaging multimedia content, and elevate their brand presence.
+              <h2 className="text-xl md:text-3xl font-bold text-white mb-3 md:mb-4 uppercase tracking-tighter drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">Nguyen Ngan</h2>
+              <p className="text-white/80 text-xs md:text-sm leading-relaxed uppercase tracking-wider">
+                Specialized in adapting to any industry, I integrate advanced AI-driven workflows to help companies craft compelling visual stories while ensuring maximum cost-efficiency and rapid deliver.
               </p>
             </HUDBox>
-            <div className="grid grid-cols-2 gap-4 mt-6 w-full max-w-xl">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 mt-6 w-full max-w-xl">
               <HUDBox title="EXPERIENCE" className="border-[#00f2ff]/30">
-                <span className="text-[#00f2ff] text-xl font-mono font-black uppercase drop-shadow-[0_0_10px_rgba(0,242,255,0.6)] tracking-tighter">10+ Years Experience</span>
+                <span className="text-[#00f2ff] text-base md:text-xl font-mono font-black uppercase drop-shadow-[0_0_10px_rgba(0,242,255,0.6)] tracking-tighter">10+ Years Experience</span>
               </HUDBox>
               <HUDBox title="PRODUCTION" className="border-[#ff00ff]/30" accentColor="#ff00ff">
-                <span className="text-[#ff00ff] text-xl font-mono font-black uppercase drop-shadow-[0_0_12px_rgba(255,0,255,0.7)] tracking-tighter">233+ Video Produced</span>
+                <span className="text-[#ff00ff] text-base md:text-xl font-mono font-black uppercase drop-shadow-[0_0_12px_rgba(255,0,255,0.7)] tracking-tighter">233+ Video Produced</span>
               </HUDBox>
             </div>
           </section>
 
           {/* PROJECTS SECTION */}
-          <section ref={projectsRef} data-section="PROJECTS" className="min-h-full space-y-8 pr-4 font-space py-10">
-            <div className="text-[10px] font-mono text-[#00f2ff] tracking-[0.5em] uppercase mb-4 opacity-50">Project_Archives</div>
+          <section ref={projectsRef} data-section="PROJECTS" className="min-h-full space-y-6 md:space-y-8 pr-0 md:pr-4 font-space py-6 md:py-10">
+            <div className="text-[8px] md:text-[10px] font-mono text-[#00f2ff] tracking-[0.3em] md:tracking-[0.5em] uppercase mb-4 opacity-50">Project_Archives</div>
             {projects.map((project) => (
               <HUDBox 
                 key={project.id} 
@@ -506,18 +506,18 @@ export default function SciFi() {
                 
                 <div className="flex justify-between items-start mb-2 relative z-10">
                   <div className="space-y-1">
-                    <span className="text-[9px] font-mono text-[#00f2ff]/80 font-bold tracking-widest uppercase drop-shadow-[0_0_3px_rgba(0,242,255,0.3)]">{project.category}</span>
-                    <h3 className="text-4xl font-black text-white tracking-tighter group-hover:text-[#00f2ff] transition-colors uppercase group-hover:drop-shadow-[0_0_10px_rgba(0,242,255,0.7)]">{project.title}</h3>
+                    <span className="text-[8px] md:text-[9px] font-mono text-[#00f2ff]/80 font-bold tracking-widest uppercase drop-shadow-[0_0_3px_rgba(0,242,255,0.3)]">{project.category}</span>
+                    <h3 className="text-2xl md:text-4xl font-black text-white tracking-tighter group-hover:text-[#00f2ff] transition-colors uppercase group-hover:drop-shadow-[0_0_10px_rgba(0,242,255,0.7)]">{project.title}</h3>
                   </div>
-                  <ExternalLink size={16} className="text-[#00f2ff]/50 group-hover:text-[#00f2ff] transition-colors cursor-pointer drop-shadow-[0_0_5px_rgba(0,242,255,0.5)]" />
+                  <ExternalLink size={14} className="text-[#00f2ff]/50 group-hover:text-[#00f2ff] transition-colors cursor-pointer drop-shadow-[0_0_5px_rgba(0,242,255,0.5)] md:w-4 md:h-4" />
                 </div>
-                <div className="aspect-video overflow-hidden mb-4 border border-[#00f2ff]/20 group-hover:border-[#00f2ff]/50 transition-colors relative z-10">
+                <div className="aspect-video overflow-hidden mb-3 md:mb-4 border border-[#00f2ff]/20 group-hover:border-[#00f2ff]/50 transition-colors relative z-10">
                   <img src={project.image} alt={project.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" referrerPolicy="no-referrer" />
                 </div>
-                <p className="text-white/60 text-sm leading-relaxed mb-4 relative z-10">{project.desc}</p>
-                <div className="flex flex-wrap gap-2 relative z-10">
+                <p className="text-white/60 text-xs md:text-sm leading-relaxed mb-4 relative z-10">{project.desc}</p>
+                <div className="flex flex-wrap gap-1.5 md:gap-2 relative z-10">
                   {project.tags.map((tag) => (
-                    <span key={tag} className="text-[8px] font-mono px-2 py-1 bg-[#00f2ff]/10 border border-[#00f2ff]/30 text-[#00f2ff] uppercase tracking-widest shadow-[0_0_5px_rgba(0,242,255,0.2)]">
+                    <span key={tag} className="text-[7px] md:text-[8px] font-mono px-1.5 md:px-2 py-0.5 md:py-1 bg-[#00f2ff]/10 border border-[#00f2ff]/30 text-[#00f2ff] uppercase tracking-widest shadow-[0_0_5px_rgba(0,242,255,0.2)]">
                       {tag}
                     </span>
                   ))}
@@ -527,20 +527,20 @@ export default function SciFi() {
           </section>
 
           {/* EXPERIENCE SECTION */}
-          <section ref={experienceRef} data-section="EXPERIENCE" className="min-h-full space-y-6 pr-4 font-space py-10">
-            <div className="text-[10px] font-mono text-[#00f2ff] tracking-[0.5em] uppercase mb-4 opacity-50">Experience_Log</div>
+          <section ref={experienceRef} data-section="EXPERIENCE" className="min-h-full space-y-4 md:space-y-6 pr-0 md:pr-4 font-space py-6 md:py-10">
+            <div className="text-[8px] md:text-[10px] font-mono text-[#00f2ff] tracking-[0.3em] md:tracking-[0.5em] uppercase mb-4 opacity-50">Experience_Log</div>
             {experience.map((exp, i) => (
               <HUDBox key={i} className="group hover:border-[#00f2ff]/60 transition-all duration-300 hover:shadow-[0_0_25px_rgba(0,242,255,0.1)] bg-black/60">
                 <div className="flex justify-between items-start mb-2">
                   <div>
-                    <span className="text-[#ff00ff] text-[9px] font-mono font-bold tracking-widest drop-shadow-[0_0_5px_rgba(255,0,255,0.4)]">{exp.date}</span>
-                    <h3 className="text-xl font-black text-white tracking-tighter group-hover:text-[#00f2ff] transition-colors uppercase group-hover:drop-shadow-[0_0_8px_rgba(0,242,255,0.6)]">{exp.role}</h3>
-                    <div className="text-[#00f2ff]/70 text-[10px] font-mono uppercase tracking-widest mt-1">{exp.company}</div>
+                    <span className="text-[#ff00ff] text-[8px] md:text-[9px] font-mono font-bold tracking-widest drop-shadow-[0_0_5px_rgba(255,0,255,0.4)]">{exp.date}</span>
+                    <h3 className="text-lg md:text-xl font-black text-white tracking-tighter group-hover:text-[#00f2ff] transition-colors uppercase group-hover:drop-shadow-[0_0_8px_rgba(0,242,255,0.6)]">{exp.role}</h3>
+                    <div className="text-[#00f2ff]/70 text-[8px] md:text-[10px] font-mono uppercase tracking-widest mt-1">{exp.company}</div>
                   </div>
                 </div>
-                <ul className="text-white/80 text-sm leading-relaxed mt-3 border-l border-[#00f2ff]/30 pl-4 space-y-2">
+                <ul className="text-white/80 text-xs md:text-sm leading-relaxed mt-3 border-l border-[#00f2ff]/30 pl-3 md:pl-4 space-y-2">
                   {exp.responsibilities.map((resp, idx) => (
-                    <li key={idx} className="relative pl-4 flex items-start">
+                    <li key={idx} className="relative pl-3 md:pl-4 flex items-start">
                       <span className="absolute left-0 top-[0.6em] w-1 h-1 bg-white/60 rounded-full" />
                       {resp}
                     </li>
@@ -552,16 +552,16 @@ export default function SciFi() {
         </div>
 
         {/* Right Column: Metrics & Tech */}
-        <div className="col-span-12 md:col-span-3 flex flex-col gap-6">
+        <div className="col-span-12 md:col-span-3 flex flex-col gap-4 md:gap-6 order-3">
           <HUDBox title="CORE_EXPERTISE" icon={Activity} className="border-[#00f2ff]/40">
-            <div className="space-y-6">
+            <div className="space-y-4 md:space-y-6">
               {skills.map((skill) => (
                 <div key={skill.name}>
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-[12px] font-mono text-white/80 tracking-widest uppercase font-bold">{skill.name}</span>
-                    <span className="text-[12px] font-mono font-bold" style={{ color: skill.color, filter: `drop-shadow(0 0 5px ${skill.color}80)` }}>{skill.level}%</span>
+                  <div className="flex justify-between items-center mb-1.5 md:mb-2">
+                    <span className="text-[10px] md:text-[12px] font-mono text-white/80 tracking-widest uppercase font-bold">{skill.name}</span>
+                    <span className="text-[10px] md:text-[12px] font-mono font-bold" style={{ color: skill.color, filter: `drop-shadow(0 0 5px ${skill.color}80)` }}>{skill.level}%</span>
                   </div>
-                  <div className="h-[6px] w-full bg-white/10 relative overflow-hidden rounded-full">
+                  <div className="h-[4px] md:h-[6px] w-full bg-white/10 relative overflow-hidden rounded-full">
                     <motion.div 
                       initial={{ width: 0 }}
                       animate={{ width: `${skill.level}%` }}
@@ -575,9 +575,9 @@ export default function SciFi() {
           </HUDBox>
 
           <HUDBox title="TECH_STACK" icon={Code} className="border-[#00f2ff]/30" accentColor="#00f2ff">
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1.5 md:gap-2">
               {techStack.map((tech) => (
-                <span key={tech} className="text-[10px] font-mono px-3 py-1.5 border border-[#00f2ff]/40 text-[#00f2ff] bg-[#00f2ff]/5 uppercase tracking-widest hover:border-[#00f2ff] hover:bg-[#00f2ff]/20 transition-all cursor-default shadow-[0_0_8px_rgba(0,242,255,0.2)] font-bold">
+                <span key={tech} className="text-[8px] md:text-[10px] font-mono px-2 md:px-3 py-1 md:py-1.5 border border-[#00f2ff]/40 text-[#00f2ff] bg-[#00f2ff]/5 uppercase tracking-widest hover:border-[#00f2ff] hover:bg-[#00f2ff]/20 transition-all cursor-default shadow-[0_0_8px_rgba(0,242,255,0.2)] font-bold">
                   {tech}
                 </span>
               ))}
@@ -585,8 +585,8 @@ export default function SciFi() {
           </HUDBox>
 
           <HUDBox title="SECURITY_STATUS" icon={Shield} className="border-[#39ff14]/40" accentColor="#39ff14">
-            <div className="space-y-4">
-              <div className="h-[6px] w-full bg-white/10 relative overflow-hidden rounded-full">
+            <div className="space-y-3 md:space-y-4">
+              <div className="h-[4px] md:h-[6px] w-full bg-white/10 relative overflow-hidden rounded-full">
                 <motion.div 
                   animate={{ x: ["-100%", "100%"] }}
                   transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
@@ -594,8 +594,8 @@ export default function SciFi() {
                 />
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-[12px] text-white/60 tracking-widest uppercase font-bold">ENCRYPTION</span>
-                <span className="text-[12px] font-mono text-[#39ff14] font-bold uppercase drop-shadow-[0_0_8px_rgba(57,255,20,0.6)]">Active</span>
+                <span className="text-[10px] md:text-[12px] text-white/60 tracking-widest uppercase font-bold">ENCRYPTION</span>
+                <span className="text-[10px] md:text-[12px] font-mono text-[#39ff14] font-bold uppercase drop-shadow-[0_0_8px_rgba(57,255,20,0.6)]">Active</span>
               </div>
             </div>
           </HUDBox>
@@ -603,17 +603,17 @@ export default function SciFi() {
       </div>
 
       {/* Bottom HUD Elements */}
-      <div className="absolute bottom-6 left-6 z-50">
-        <div className="bg-black/80 border border-[#39ff14]/40 px-5 py-3 flex items-center gap-3 shadow-[0_0_15px_rgba(57,255,20,0.1)]">
-          <div className="w-2 h-2 bg-[#39ff14] animate-pulse rounded-full shadow-[0_0_10px_#39ff14]" />
-          <div className="text-[10px] font-mono font-bold text-[#39ff14] tracking-[0.2em] uppercase drop-shadow-[0_0_5px_rgba(57,255,20,0.5)]">System_Online</div>
-          <div className="text-[10px] font-mono text-[#39ff14]/60 ml-2 uppercase font-bold">Ver: 2.0.26</div>
+      <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 z-50">
+        <div className="bg-black/80 border border-[#39ff14]/40 px-3 py-2 md:px-5 md:py-3 flex items-center gap-2 md:gap-3 shadow-[0_0_15px_rgba(57,255,20,0.1)]">
+          <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-[#39ff14] animate-pulse rounded-full shadow-[0_0_10px_#39ff14]" />
+          <div className="text-[8px] md:text-[10px] font-mono font-bold text-[#39ff14] tracking-[0.1em] md:tracking-[0.2em] uppercase drop-shadow-[0_0_5px_rgba(57,255,20,0.5)]">System_Online</div>
+          <div className="text-[8px] md:text-[10px] font-mono text-[#39ff14]/60 ml-1 md:ml-2 uppercase font-bold">Ver: 2.0.26</div>
         </div>
       </div>
 
-      <div className="absolute bottom-6 right-6 z-50 flex items-center gap-4">
-        <Link to="/" className="p-3 border-2 border-[#ff00ff]/50 text-[#ff00ff] hover:bg-[#ff00ff] hover:text-black transition-all shadow-[0_0_15px_rgba(255,0,255,0.2)] hover:shadow-[0_0_20px_rgba(255,0,255,0.5)]">
-          <ArrowLeft size={20} />
+      <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 z-50 flex items-center gap-4">
+        <Link to="/" className="p-2 md:p-3 border-2 border-[#ff00ff]/50 text-[#ff00ff] hover:bg-[#ff00ff] hover:text-black transition-all shadow-[0_0_15px_rgba(255,0,255,0.2)] hover:shadow-[0_0_20px_rgba(255,0,255,0.5)]">
+          <ArrowLeft size={16} className="md:w-5 md:h-5" />
         </Link>
       </div>
 

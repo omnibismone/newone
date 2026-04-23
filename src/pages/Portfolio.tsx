@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowUpRight, X, ArrowLeftRight } from "lucide-react";
+import DesignShowcase from "../components/DesignShowcase";
 
 const brutalistEase = [0.25, 1, 0.5, 1];
 
@@ -136,11 +137,18 @@ const ImageComparisonSlider = ({ before, after }: { before: string, after: strin
 
 const projects: Project[] = [
   {
-    id: 1,
-    title: "Perfume Advertising",
-    category: "3D Motion Graphics & Product Design",
-    youtubeId: "gEF2-nWq11c",
-    year: "2024"
+    id: 3,
+    title: "ASO Before & After",
+    category: "Visual Conversion & Store Assets Optimization",
+    image: "https://make.ct.ws/wp-content/uploads/2025/07/Image_ASO_Before-and-After.png",
+    year: "2021"
+  },
+  {
+    id: 2,
+    title: "Webtoon Trailer",
+    category: "Cinematic Motion, VFX & Sound Design",
+    youtubeId: "Px3VdJx-o14",
+    year: "2020"
   },
   {
     id: 4,
@@ -162,18 +170,11 @@ const projects: Project[] = [
     year: "2020"
   },
   {
-    id: 3,
-    title: "ASO Before & After",
-    category: "Visual Conversion & Store Assets Optimization",
-    image: "https://make.ct.ws/wp-content/uploads/2025/07/Image_ASO_Before-and-After.png",
-    year: "2021"
-  },
-  {
-    id: 2,
-    title: "Webtoon Trailer",
-    category: "Cinematic Motion, VFX & Sound Design",
-    youtubeId: "Px3VdJx-o14",
-    year: "2020"
+    id: 1,
+    title: "Perfume Advertising",
+    category: "3D Motion Graphics & Product Design",
+    youtubeId: "gEF2-nWq11c",
+    year: "2024"
   }
 ];
 
@@ -307,6 +308,33 @@ export default function Portfolio() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Minimalist Technical Divider */}
+      <div className="mt-80 mb-24 px-6">
+        <div className="border-t-[1px] border-white/20 pt-10 flex flex-col md:flex-row justify-between items-start gap-8">
+          <div className="flex items-center gap-6">
+            <span className="font-display text-4xl text-white/10 select-none">02</span>
+            <div className="h-8 w-[1px] bg-[#ff0099]/30 hidden md:block" />
+            <div className="space-y-1">
+              <p className="font-mono text-[10px] tracking-[0.5em] text-[#ff0099] uppercase font-black">Expansion_Protocol</p>
+              <div className="flex gap-2">
+                {[...Array(5)].map((_, i) => (
+                  <div key={i} className="w-1.5 h-1.5 bg-white/10 rounded-full" />
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="font-mono text-[8px] md:text-[10px] tracking-[0.3em] text-white/20 uppercase text-right leading-relaxed">
+            Database_Query: Success <br />
+            Visual_Sync: Active <br />
+            Display_Mode: Masonry_Grid
+          </div>
+        </div>
+      </div>
+
+      <div className="pt-12">
+        <DesignShowcase />
+      </div>
     </div>
   );
 }

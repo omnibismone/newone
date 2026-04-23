@@ -1,7 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence, useMotionValue, useTransform, animate, useInView } from "motion/react";
-import { Briefcase, Target, Lightbulb, Users, ArrowRight, ChevronDown } from "lucide-react";
+import { Briefcase, Target, Lightbulb, Users, ArrowRight, ChevronDown, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import PixelLogo from "../components/PixelLogo";
 
 const brutalistEase = [0.25, 1, 0.5, 1];
 
@@ -29,7 +30,12 @@ export default function Home() {
   return (
     <div className="pt-28 md:pt-40">
       {/* Hero Section */}
-      <section className="px-6 max-w-7xl mx-auto">
+      <section className="px-6 max-w-7xl mx-auto relative">
+        {/* Background Pixel Logo */}
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[600px] md:h-[600px] z-0 opacity-60 md:opacity-100 pointer-events-none md:pointer-events-auto overflow-visible">
+          <PixelLogo src="/logo-new.svg" size={600} />
+        </div>
+
         <motion.div 
           initial="hidden"
           whileInView="visible"
@@ -101,7 +107,7 @@ export default function Home() {
             className="flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-12 max-w-4xl pb-4 md:pb-0"
           >
             <p className="text-lg sm:text-xl md:text-2xl text-white/80 leading-relaxed font-medium flex-1">
-              I bring together creative vision and technical expertise. With experience across fast-paced industries, I help companies craft compelling visual stories, build engaging multimedia content, and elevate their brand presence.
+              Specialized in adapting to any industry, I integrate advanced AI-driven workflows to help companies craft compelling visual stories while ensuring maximum cost-efficiency and rapid deliver.
             </p>
             <Link to="/portfolio" className="relative flex items-center justify-center bg-[#ff0099] text-white w-28 h-28 md:w-32 md:h-32 rounded-full font-bold uppercase tracking-wider hover:scale-110 transition-transform duration-300 shrink-0 group mt-4 md:mt-0 self-center md:self-auto">
               {/* Rotating compass ring */}
@@ -225,7 +231,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+      
       {/* Experience Section */}
       <section className="py-16 md:py-32 px-6 max-w-7xl mx-auto">
         <motion.h2 
